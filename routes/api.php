@@ -14,3 +14,4 @@ Route::get('/user', function (Request $request) {
 Route::apiResource('users', UserController::class);
 Route::apiResource('categories', CategoryController::class);
 Route::apiResource('transactions', TransactionController::class);
+Route::apiResource('pemasukan', App\Http\Controllers\API\PemasukanController::class);

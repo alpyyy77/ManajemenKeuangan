@@ -235,6 +235,159 @@
                 }
             }
         },
+        "/api/pemasukan": {
+            "get": {
+                "tags": [
+                    "Pemasukan"
+                ],
+                "summary": "Get list of pemasukan",
+                "operationId": "48d9874d8c7d02132e5e57c7ca9887bf",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Pemasukan"
+                ],
+                "summary": "Create a new pemasukan",
+                "operationId": "618b68906c07d21c1be0812bdb273ba9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "user_id",
+                                    "jumlah",
+                                    "tanggal"
+                                ],
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer"
+                                    },
+                                    "tanggal": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "catatan": {
+                                        "type": "string"
+                                    },
+                                    "jumlah": {
+                                        "type": "number",
+                                        "format": "float"
+                                    },
+                                    "status": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Pemasukan created"
+                    }
+                }
+            }
+        },
+        "/api/pemasukan/{id}": {
+            "get": {
+                "tags": [
+                    "Pemasukan"
+                ],
+                "summary": "Get a single pemasukan",
+                "operationId": "0bd3e1aa8eddb07bf9515f889ac750b5",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Pemasukan"
+                ],
+                "summary": "Update pemasukan",
+                "operationId": "f7bc370fcede7dd87000bba42d7f9214",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "tanggal": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "catatan": {
+                                        "type": "string"
+                                    },
+                                    "jumlah": {
+                                        "type": "number",
+                                        "format": "float"
+                                    },
+                                    "status": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Pemasukan updated"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Pemasukan"
+                ],
+                "summary": "Delete pemasukan",
+                "operationId": "1513578ac62df2ccb71437376f351b86",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Pemasukan deleted"
+                    }
+                }
+            }
+        },
         "/api/transactions": {
             "get": {
                 "tags": [
@@ -546,6 +699,10 @@
         }
     },
     "tags": [
+        {
+            "name": "Pemasukan",
+            "description": "API Endpoints for Pemasukan"
+        },
         {
             "name": "Transactions",
             "description": "API Endpoints for Transactions"
