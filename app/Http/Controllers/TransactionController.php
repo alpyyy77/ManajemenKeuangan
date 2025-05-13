@@ -34,11 +34,13 @@ class TransactionController extends Controller
     public function update(Request $request, Transaction $transaction)
     {
         $request->validate([
-            'category_id' => 'exists:categories,id',
-            'amount' => 'numeric',
-            'type' => 'in:income,expense',
-            'transaction_date' => 'date'
+            'category_id'      => 'sometimes|exists:categories,id',
+            'amount'           => 'sometimes|numeric',
+            'type'             => 'sometimes|in:income,expense',
+            'description'      => 'sometimes|string|nullable',
+            'transaction_date' => 'sometimes|date'
         ]);
+        
 
         $transaction->update($request->all());
         return response()->json($transaction);
