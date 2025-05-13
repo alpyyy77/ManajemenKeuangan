@@ -2,9 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\TransactionController;
+use App\Http\Controllers\API\UserController;
 
 
 Route::get('/user', function (Request $request) {
