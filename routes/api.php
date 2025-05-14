@@ -15,3 +15,5 @@ Route::apiResource('users', UserController::class);
 Route::apiResource('categories', CategoryController::class);
 Route::apiResource('transactions', TransactionController::class);
 Route::apiResource('pemasukan', App\Http\Controllers\API\PemasukanController::class);
+Route::apiResource('pengeluaran', App\Http\Controllers\API\PengeluaranController::class);
+Route::apiResource('utang', App\Http\Controllers\UtangController::class);
