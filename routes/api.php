@@ -7,6 +7,7 @@ use App\Http\Controllers\API\TransactionController;
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\PengeluaranController;
 use App\Http\Controllers\API\UtangController;
+use App\Http\Controllers\API\PiutangController;
 
 
 Route::get('/user', function (Request $request) {

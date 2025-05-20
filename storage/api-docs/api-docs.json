@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
         "title": "API Documentation",
-        "description": "Documentation for the Money Mannagement",
+        "description": "Documentation for the Money Management",
         "contact": {
             "email": "admin@example.com"
         },
@@ -601,6 +601,129 @@
                 }
             }
         },
+        "/api/piutang": {
+            "get": {
+                "tags": [
+                    "Piutang"
+                ],
+                "summary": "Ambil semua data piutang",
+                "operationId": "0bde1b68e76a1d355b782a8d29a15dcc",
+                "responses": {
+                    "200": {
+                        "description": "Sukses"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Piutang"
+                ],
+                "summary": "Buat data piutang",
+                "operationId": "9c1b36b7fe3a09174e872acadb703429",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PiutangInput"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Berhasil dibuat"
+                    }
+                }
+            }
+        },
+        "/api/piutang/{id}": {
+            "get": {
+                "tags": [
+                    "Piutang"
+                ],
+                "summary": "Ambil piutang berdasarkan ID",
+                "operationId": "21aa987cbbae1a3a2305d8803b98b3f5",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Berhasil"
+                    },
+                    "404": {
+                        "description": "Tidak ditemukan"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Piutang"
+                ],
+                "summary": "Update data piutang",
+                "operationId": "d54a2bab93f9f9878a4ef1d7a56a075b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PiutangInput"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Berhasil diupdate"
+                    },
+                    "404": {
+                        "description": "Tidak ditemukan"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Piutang"
+                ],
+                "summary": "Hapus data piutang",
+                "operationId": "a5152d6822e854c6fc1982e599ae7131",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Berhasil dihapus"
+                    },
+                    "404": {
+                        "description": "Tidak ditemukan"
+                    }
+                }
+            }
+        },
         "/api/transactions": {
             "get": {
                 "tags": [
@@ -1089,6 +1212,76 @@
                 "xml": {
                     "name": "Pengeluaran"
                 }
+            },
+            "Piutang": {
+                "title": "Piutang",
+                "required": [
+                    "tanggal",
+                    "jumlah",
+                    "debitur",
+                    "user_id"
+                ],
+                "properties": {
+                    "id_piutang": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "tanggal": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2025-05-01"
+                    },
+                    "catatan": {
+                        "type": "string",
+                        "example": "Catatan piutang"
+                    },
+                    "jumlah": {
+                        "type": "number",
+                        "example": 150000
+                    },
+                    "debitur": {
+                        "type": "string",
+                        "example": "Nama debitur"
+                    },
+                    "user_id": {
+                        "type": "integer",
+                        "example": 1
+                    }
+                },
+                "type": "object"
+            },
+            "PiutangInput": {
+                "title": "PiutangInput",
+                "required": [
+                    "tanggal",
+                    "jumlah",
+                    "debitur",
+                    "user_id"
+                ],
+                "properties": {
+                    "tanggal": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2025-05-01"
+                    },
+                    "catatan": {
+                        "type": "string",
+                        "example": "Catatan piutang"
+                    },
+                    "jumlah": {
+                        "type": "number",
+                        "example": 150000
+                    },
+                    "debitur": {
+                        "type": "string",
+                        "example": "Nama debitur"
+                    },
+                    "user_id": {
+                        "type": "integer",
+                        "example": 1
+                    }
+                },
+                "type": "object"
             }
         }
     },
@@ -1100,6 +1293,10 @@
         {
             "name": "Pengeluaran",
             "description": "Manajemen data pengeluaran"
+        },
+        {
+            "name": "Piutang",
+            "description": "Manajemen data Piutang"
         },
         {
             "name": "Transactions",
