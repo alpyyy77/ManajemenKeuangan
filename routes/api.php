@@ -19,3 +19,4 @@ Route::apiResource('transactions', TransactionController::class);
 Route::apiResource('pemasukan', PemasukanController::class);
 Route::apiResource('pengeluaran', PengeluaranController::class);
 Route::apiResource('utang', UtangController::class);
+Route::apiResource('piutang', PiutangController::class);
