@@ -9,7 +9,7 @@ use OpenApi\Annotations as OA;
 
 /**
  * @OA\Tag(
- *     name="Utwang",
+ *     name="Utang",
  *     description="Manajemen data Utang"
  * )
  */
