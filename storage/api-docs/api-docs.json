@@ -388,6 +388,219 @@
                 }
             }
         },
+        "/api/pengeluaran": {
+            "get": {
+                "tags": [
+                    "Pengeluaran"
+                ],
+                "summary": "Tampilkan semua data pengeluaran",
+                "operationId": "17438ca5e742e916663eb39dd2d2e8a1",
+                "responses": {
+                    "200": {
+                        "description": "Berhasil menampilkan daftar pengeluaran",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Pengeluaran"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Pengeluaran"
+                ],
+                "summary": "Simpan data pengeluaran baru",
+                "operationId": "77987b3680f32a7ed4cea1943fbba449",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "tanggal",
+                                    "jumlah",
+                                    "user_id"
+                                ],
+                                "properties": {
+                                    "tanggal": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-05-01"
+                                    },
+                                    "catatan": {
+                                        "type": "string",
+                                        "example": "Belanja bahan"
+                                    },
+                                    "jumlah": {
+                                        "type": "number",
+                                        "example": 150000
+                                    },
+                                    "user_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Data pengeluaran berhasil dibuat",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Pengeluaran"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/pengeluaran/{id}": {
+            "get": {
+                "tags": [
+                    "Pengeluaran"
+                ],
+                "summary": "Tampilkan detail pengeluaran",
+                "operationId": "af0e37dd7c22dc374d90f99e95af7da6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID pengeluaran",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detail pengeluaran ditemukan",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Pengeluaran"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Data tidak ditemukan"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Pengeluaran"
+                ],
+                "summary": "Perbarui data pengeluaran",
+                "operationId": "6148fb32c49f8cf8cb78eec37def638f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID pengeluaran",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "tanggal": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-05-02"
+                                    },
+                                    "catatan": {
+                                        "type": "string",
+                                        "example": "Update catatan"
+                                    },
+                                    "jumlah": {
+                                        "type": "number",
+                                        "example": 200000
+                                    },
+                                    "user_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Data berhasil diperbarui",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Pengeluaran"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Data tidak ditemukan"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Pengeluaran"
+                ],
+                "summary": "Hapus data pengeluaran",
+                "operationId": "2d6ca27f2dea0257d0376b06d8189b2f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID pengeluaran",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Data berhasil dihapus",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Data pengeluaran berhasil dihapus"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Data tidak ditemukan"
+                    }
+                }
+            }
+        },
         "/api/transactions": {
             "get": {
                 "tags": [
@@ -696,12 +909,222 @@
                     }
                 }
             }
+        },
+        "/api/utang": {
+            "get": {
+                "tags": [
+                    "Utang"
+                ],
+                "summary": "Menampilkan semua data utang",
+                "operationId": "getUtangList",
+                "responses": {
+                    "200": {
+                        "description": "Berhasil"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Utang"
+                ],
+                "summary": "Membuat data utang baru",
+                "operationId": "storeUtang",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "tanggal",
+                                    "jumlah",
+                                    "kreditur",
+                                    "user_id"
+                                ],
+                                "properties": {
+                                    "tanggal": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "catatan": {
+                                        "type": "string"
+                                    },
+                                    "jumlah": {
+                                        "type": "number",
+                                        "format": "decimal"
+                                    },
+                                    "kreditur": {
+                                        "type": "string"
+                                    },
+                                    "user_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Data utang berhasil dibuat"
+                    }
+                }
+            }
+        },
+        "/api/utang/{id}": {
+            "get": {
+                "tags": [
+                    "Utang"
+                ],
+                "summary": "Menampilkan detail utang berdasarkan ID",
+                "operationId": "getUtangById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID Utang",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Berhasil"
+                    },
+                    "404": {
+                        "description": "Tidak ditemukan"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Utang"
+                ],
+                "summary": "Update data utang berdasarkan ID",
+                "operationId": "updateUtang",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID Utang",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "tanggal": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "catatan": {
+                                        "type": "string"
+                                    },
+                                    "jumlah": {
+                                        "type": "number",
+                                        "format": "decimal"
+                                    },
+                                    "kreditur": {
+                                        "type": "string"
+                                    },
+                                    "user_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Berhasil diupdate"
+                    },
+                    "404": {
+                        "description": "Tidak ditemukan"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Utang"
+                ],
+                "summary": "Hapus data utang berdasarkan ID",
+                "operationId": "deleteUtang",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID Utang",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Berhasil dihapus"
+                    },
+                    "404": {
+                        "description": "Tidak ditemukan"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Pengeluaran": {
+                "title": "Pengeluaran",
+                "required": [
+                    "tanggal",
+                    "jumlah",
+                    "user_id"
+                ],
+                "properties": {
+                    "id_pengeluaran": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "tanggal": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2025-05-01"
+                    },
+                    "catatan": {
+                        "type": "string",
+                        "example": "Belanja bahan"
+                    },
+                    "jumlah": {
+                        "type": "number",
+                        "example": 150000
+                    },
+                    "user_id": {
+                        "type": "integer",
+                        "example": 1
+                    }
+                },
+                "type": "object"
+            }
         }
     },
     "tags": [
         {
             "name": "Pemasukan",
             "description": "API Endpoints for Pemasukan"
+        },
+        {
+            "name": "Pengeluaran",
+            "description": "Manajemen data pengeluaran"
         },
         {
             "name": "Transactions",
@@ -714,6 +1137,10 @@
         {
             "name": "Category",
             "description": "Category"
+        },
+        {
+            "name": "Utang",
+            "description": "Utang"
         }
     ]
 }
