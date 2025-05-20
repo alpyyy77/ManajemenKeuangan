@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Models\Pengeluaran;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use OpenApi\Annotations as OA;
+
 
 /**
  * @OA\Tag(

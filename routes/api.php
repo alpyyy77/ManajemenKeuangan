@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\TransactionController;
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\PengeluaranController;
+use App\Http\Controllers\API\UtangController;
 
 
 Route::get('/user', function (Request $request) {

@@ -1,35 +1,30 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+namespace App\Models;
 
-class CreateUtangTable extends Migration
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Utang extends Model
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('utang', function (Blueprint $table) {
-            $table->id('id_utang'); // Primary key
-            $table->date('tanggal');
-            $table->text('catatan')->nullable();
-            $table->decimal('jumlah', 15, 2);
-            $table->string('kreditur', 255);
-            $table->unsignedBigInteger('user_id'); // Foreign key ke users
+    use HasFactory;
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            
-            $table->timestamps(); // created_at dan updated_at
-        });
-    }
+    protected $table = 'utang';
+    protected $primaryKey = 'id_utang';
+
+    protected $fillable = [
+        'tanggal',
+        'catatan',
+        'jumlah',
+        'kreditur',
+        'user_id',
+    ];
 
     /**
-     * Reverse the migrations.
+     * Relasi ke model User
      */
-    public function down(): void
+    public function user()
     {
-        Schema::dropIfExists('utang');
+        return $this->belongsTo(User::class);
     }
 }
