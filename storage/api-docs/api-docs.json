@@ -1085,35 +1085,10 @@
         "schemas": {
             "Pengeluaran": {
                 "title": "Pengeluaran",
-                "required": [
-                    "tanggal",
-                    "jumlah",
-                    "user_id"
-                ],
-                "properties": {
-                    "id_pengeluaran": {
-                        "type": "integer",
-                        "example": 1
-                    },
-                    "tanggal": {
-                        "type": "string",
-                        "format": "date",
-                        "example": "2025-05-01"
-                    },
-                    "catatan": {
-                        "type": "string",
-                        "example": "Belanja bahan"
-                    },
-                    "jumlah": {
-                        "type": "number",
-                        "example": 150000
-                    },
-                    "user_id": {
-                        "type": "integer",
-                        "example": 1
-                    }
-                },
-                "type": "object"
+                "description": "Model for Pengeluaran",
+                "xml": {
+                    "name": "Pengeluaran"
+                }
             }
         }
     },
@@ -1135,12 +1110,12 @@
             "description": "API Endpoints for Users"
         },
         {
-            "name": "Category",
-            "description": "Category"
+            "name": "Utang",
+            "description": "Manajemen data Utang"
         },
         {
-            "name": "Utang",
-            "description": "Utang"
+            "name": "Category",
+            "description": "Category"
         }
     ]
 }
