@@ -18,7 +18,7 @@ class PengeluaranController extends Controller
 {
     /**
      * @OA\Get(
-     *     path="/api/pengeluaran",
+     *     path="/pengeluaran",
      *     tags={"Pengeluaran"},
      *     summary="Tampilkan semua data pengeluaran",
      *     @OA\Response(
@@ -36,7 +36,7 @@ class PengeluaranController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/pengeluaran",
+     *     path="/pengeluaran",
      *     tags={"Pengeluaran"},
      *     summary="Simpan data pengeluaran baru",
      *     @OA\RequestBody(
@@ -71,7 +71,7 @@ class PengeluaranController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/pengeluaran/{id}",
+     *     path="/pengeluaran/{id}",
      *     tags={"Pengeluaran"},
      *     summary="Tampilkan detail pengeluaran",
      *     @OA\Parameter(
@@ -100,7 +100,7 @@ class PengeluaranController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/api/pengeluaran/{id}",
+     *     path="/pengeluaran/{id}",
      *     tags={"Pengeluaran"},
      *     summary="Perbarui data pengeluaran",
      *     @OA\Parameter(
@@ -147,7 +147,7 @@ class PengeluaranController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="/api/pengeluaran/{id}",
+     *     path="/pengeluaran/{id}",
      *     tags={"Pengeluaran"},
      *     summary="Hapus data pengeluaran",
      *     @OA\Parameter(

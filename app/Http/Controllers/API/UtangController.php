@@ -17,7 +17,7 @@ class UtangController extends Controller
 {
     /**
      * @OA\Get(
-     *      path="/api/utang",
+     *      path="/utang",
      *      operationId="getUtangList",
      *      tags={"Utang"},
      *      summary="Menampilkan semua data utang",
@@ -34,7 +34,7 @@ class UtangController extends Controller
 
     /**
      * @OA\Post(
-     *      path="/api/utang",
+     *      path="/utang",
      *      operationId="storeUtang",
      *      tags={"Utang"},
      *      summary="Membuat data utang baru",
@@ -72,7 +72,7 @@ class UtangController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/api/utang/{id}",
+     *      path="/utang/{id}",
      *      operationId="getUtangById",
      *      tags={"Utang"},
      *      summary="Menampilkan detail utang berdasarkan ID",
@@ -104,7 +104,7 @@ class UtangController extends Controller
 
     /**
      * @OA\Put(
-     *      path="/api/utang/{id}",
+     *      path="/utang/{id}",
      *      operationId="updateUtang",
      *      tags={"Utang"},
      *      summary="Update data utang berdasarkan ID",
@@ -157,7 +157,7 @@ class UtangController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/api/utang/{id}",
+     *      path="/utang/{id}",
      *      operationId="deleteUtang",
      *      tags={"Utang"},
      *      summary="Hapus data utang berdasarkan ID",

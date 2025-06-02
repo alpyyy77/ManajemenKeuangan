@@ -19,7 +19,7 @@
         }
     ],
     "paths": {
-        "/api/categories": {
+        "/categories": {
             "get": {
                 "tags": [
                     "Category"
@@ -101,7 +101,7 @@
                 }
             }
         },
-        "/api/categories/{id}": {
+        "/categories/{id}": {
             "get": {
                 "tags": [
                     "Category"
@@ -235,13 +235,13 @@
                 }
             }
         },
-        "/api/pemasukan": {
+        "/pemasukan": {
             "get": {
                 "tags": [
                     "Pemasukan"
                 ],
                 "summary": "Get list of pemasukan",
-                "operationId": "48d9874d8c7d02132e5e57c7ca9887bf",
+                "operationId": "a3c1e92e14d2030b4fed52cc38167454",
                 "responses": {
                     "200": {
                         "description": "Successful operation"
@@ -253,7 +253,7 @@
                     "Pemasukan"
                 ],
                 "summary": "Create a new pemasukan",
-                "operationId": "618b68906c07d21c1be0812bdb273ba9",
+                "operationId": "5d448096e424f010fc700fa0959cd656",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -295,13 +295,13 @@
                 }
             }
         },
-        "/api/pemasukan/{id}": {
+        "/pemasukan/{id}": {
             "get": {
                 "tags": [
                     "Pemasukan"
                 ],
                 "summary": "Get a single pemasukan",
-                "operationId": "0bd3e1aa8eddb07bf9515f889ac750b5",
+                "operationId": "bc3b8718cbf5e39529cd954174e2c772",
                 "parameters": [
                     {
                         "name": "id",
@@ -323,7 +323,7 @@
                     "Pemasukan"
                 ],
                 "summary": "Update pemasukan",
-                "operationId": "f7bc370fcede7dd87000bba42d7f9214",
+                "operationId": "18beb7561e7ae60970cfda0583b704ba",
                 "parameters": [
                     {
                         "name": "id",
@@ -370,7 +370,7 @@
                     "Pemasukan"
                 ],
                 "summary": "Delete pemasukan",
-                "operationId": "1513578ac62df2ccb71437376f351b86",
+                "operationId": "f535ddcd48f1c4752c9465d116f8be59",
                 "parameters": [
                     {
                         "name": "id",
@@ -388,13 +388,13 @@
                 }
             }
         },
-        "/api/pengeluaran": {
+        "/pengeluaran": {
             "get": {
                 "tags": [
                     "Pengeluaran"
                 ],
                 "summary": "Tampilkan semua data pengeluaran",
-                "operationId": "17438ca5e742e916663eb39dd2d2e8a1",
+                "operationId": "9961de5703beaa6cda54f49963ddbee0",
                 "responses": {
                     "200": {
                         "description": "Berhasil menampilkan daftar pengeluaran",
@@ -416,7 +416,7 @@
                     "Pengeluaran"
                 ],
                 "summary": "Simpan data pengeluaran baru",
-                "operationId": "77987b3680f32a7ed4cea1943fbba449",
+                "operationId": "79a38b7eb3fa367f3d96b1c4a80f1c65",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -465,13 +465,13 @@
                 }
             }
         },
-        "/api/pengeluaran/{id}": {
+        "/pengeluaran/{id}": {
             "get": {
                 "tags": [
                     "Pengeluaran"
                 ],
                 "summary": "Tampilkan detail pengeluaran",
-                "operationId": "af0e37dd7c22dc374d90f99e95af7da6",
+                "operationId": "d2cceab258e8bcb9e110018cc2085978",
                 "parameters": [
                     {
                         "name": "id",
@@ -504,7 +504,7 @@
                     "Pengeluaran"
                 ],
                 "summary": "Perbarui data pengeluaran",
-                "operationId": "6148fb32c49f8cf8cb78eec37def638f",
+                "operationId": "af6fd5996b0e31a6ba8ceffd844c4425",
                 "parameters": [
                     {
                         "name": "id",
@@ -566,7 +566,7 @@
                     "Pengeluaran"
                 ],
                 "summary": "Hapus data pengeluaran",
-                "operationId": "2d6ca27f2dea0257d0376b06d8189b2f",
+                "operationId": "9a619903239b85cdbad7a59cb252d3de",
                 "parameters": [
                     {
                         "name": "id",
@@ -601,13 +601,13 @@
                 }
             }
         },
-        "/api/piutang": {
+        "/piutang": {
             "get": {
                 "tags": [
                     "Piutang"
                 ],
                 "summary": "Ambil semua data piutang",
-                "operationId": "0bde1b68e76a1d355b782a8d29a15dcc",
+                "operationId": "0d1eb5a1f1f8535407be714c945cb3e1",
                 "responses": {
                     "200": {
                         "description": "Sukses"
@@ -619,13 +619,13 @@
                     "Piutang"
                 ],
                 "summary": "Buat data piutang",
-                "operationId": "9c1b36b7fe3a09174e872acadb703429",
+                "operationId": "40c389cfc1be4a61716c63b530ef4d62",
                 "requestBody": {
                     "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/PiutangInput"
+                                "$ref": "#/components/schemas/Piutang"
                             }
                         }
                     }
@@ -637,13 +637,13 @@
                 }
             }
         },
-        "/api/piutang/{id}": {
+        "/piutang/{id}": {
             "get": {
                 "tags": [
                     "Piutang"
                 ],
                 "summary": "Ambil piutang berdasarkan ID",
-                "operationId": "21aa987cbbae1a3a2305d8803b98b3f5",
+                "operationId": "47060607fd1e9466c57fc6c4bbe451ff",
                 "parameters": [
                     {
                         "name": "id",
@@ -668,7 +668,7 @@
                     "Piutang"
                 ],
                 "summary": "Update data piutang",
-                "operationId": "d54a2bab93f9f9878a4ef1d7a56a075b",
+                "operationId": "4807aa3fbdcec66ed4c3f045213f5777",
                 "parameters": [
                     {
                         "name": "id",
@@ -684,7 +684,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/PiutangInput"
+                                "$ref": "#/components/schemas/Piutang"
                             }
                         }
                     }
@@ -703,7 +703,7 @@
                     "Piutang"
                 ],
                 "summary": "Hapus data piutang",
-                "operationId": "a5152d6822e854c6fc1982e599ae7131",
+                "operationId": "4ed24717e8bff61210ad183a5e93b607",
                 "parameters": [
                     {
                         "name": "id",
@@ -724,13 +724,13 @@
                 }
             }
         },
-        "/api/transactions": {
+        "/transactions": {
             "get": {
                 "tags": [
                     "Transactions"
                 ],
                 "summary": "Get list of transactions",
-                "operationId": "5effd5c228c8c92f09b136d74aacab83",
+                "operationId": "ceac716339cb2455648899fac415b98f",
                 "responses": {
                     "200": {
                         "description": "Successful operation"
@@ -742,7 +742,7 @@
                     "Transactions"
                 ],
                 "summary": "Create a new transaction",
-                "operationId": "f5614e1a4ee60e20e9c82334e2c7e5be",
+                "operationId": "d3a7a8d8ab4eeb1b4fb29af77c0e98f2",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -790,13 +790,13 @@
                 }
             }
         },
-        "/api/transactions/{id}": {
+        "/transactions/{id}": {
             "get": {
                 "tags": [
                     "Transactions"
                 ],
                 "summary": "Get a single transaction",
-                "operationId": "70ab76f4625c98ff68e6a91150dbf682",
+                "operationId": "a64a50b3720f06a3a57ca6d76fae5b12",
                 "parameters": [
                     {
                         "name": "id",
@@ -818,7 +818,7 @@
                     "Transactions"
                 ],
                 "summary": "Update a transaction",
-                "operationId": "01a62aaa8c47a7066fd238eea6401873",
+                "operationId": "456e172c964e6149c8b721e6d735a6b8",
                 "parameters": [
                     {
                         "name": "id",
@@ -869,7 +869,7 @@
                     "Transactions"
                 ],
                 "summary": "Delete a transaction",
-                "operationId": "9b17c316f838159e7f0a130470b0f58d",
+                "operationId": "4c4238c89f4357bbeb6e0dce40b7a343",
                 "parameters": [
                     {
                         "name": "id",
@@ -887,13 +887,13 @@
                 }
             }
         },
-        "/api/users": {
+        "/users": {
             "get": {
                 "tags": [
                     "Users"
                 ],
                 "summary": "Get all users",
-                "operationId": "d7a57f4d7de18fb0f92501172472c9b6",
+                "operationId": "41a0b1897bd592c41f6d146d6dc328c6",
                 "responses": {
                     "200": {
                         "description": "List of users"
@@ -905,7 +905,7 @@
                     "Users"
                 ],
                 "summary": "Create a new user",
-                "operationId": "9fea6f2adcb69614c521a7733358382d",
+                "operationId": "0e35d9af69683ea46987bd306963b368",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -942,13 +942,13 @@
                 }
             }
         },
-        "/api/users/{id}": {
+        "/users/{id}": {
             "get": {
                 "tags": [
                     "Users"
                 ],
                 "summary": "Get a single user with transactions",
-                "operationId": "40a5104e23b52137e78c3d3ac48b88a8",
+                "operationId": "4912d83c790d90d55874bbb5347b274f",
                 "parameters": [
                     {
                         "name": "id",
@@ -970,7 +970,7 @@
                     "Users"
                 ],
                 "summary": "Update a user",
-                "operationId": "b166772cec9714067040e77cf14beeba",
+                "operationId": "8c7afeaa86a5fe7a9e7625b62fc415cc",
                 "parameters": [
                     {
                         "name": "id",
@@ -1015,7 +1015,7 @@
                     "Users"
                 ],
                 "summary": "Delete a user",
-                "operationId": "ce06860a51ab016ef66e753544fe4563",
+                "operationId": "3ffc44ca53282cb725f506f80f4e03b8",
                 "parameters": [
                     {
                         "name": "id",
@@ -1033,7 +1033,7 @@
                 }
             }
         },
-        "/api/utang": {
+        "/utang": {
             "get": {
                 "tags": [
                     "Utang"
@@ -1094,7 +1094,7 @@
                 }
             }
         },
-        "/api/utang/{id}": {
+        "/utang/{id}": {
             "get": {
                 "tags": [
                     "Utang"
@@ -1226,39 +1226,6 @@
                         "type": "integer",
                         "example": 1
                     },
-                    "tanggal": {
-                        "type": "string",
-                        "format": "date",
-                        "example": "2025-05-01"
-                    },
-                    "catatan": {
-                        "type": "string",
-                        "example": "Catatan piutang"
-                    },
-                    "jumlah": {
-                        "type": "number",
-                        "example": 150000
-                    },
-                    "debitur": {
-                        "type": "string",
-                        "example": "Nama debitur"
-                    },
-                    "user_id": {
-                        "type": "integer",
-                        "example": 1
-                    }
-                },
-                "type": "object"
-            },
-            "PiutangInput": {
-                "title": "PiutangInput",
-                "required": [
-                    "tanggal",
-                    "jumlah",
-                    "debitur",
-                    "user_id"
-                ],
-                "properties": {
                     "tanggal": {
                         "type": "string",
                         "format": "date",

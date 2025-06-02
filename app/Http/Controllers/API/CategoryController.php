@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     /**
      * @OA\Get(
-     *     path="/api/categories",
+     *     path="/categories",
      *     summary="Get all categories",
      *     tags={"Category"},
      *     operationId="getCategories",
@@ -35,7 +35,7 @@ class CategoryController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/categories",
+     *     path="/categories",
      *     summary="Create a new category",
      *     tags={"Category"},
      *     operationId="createCategory",
@@ -65,7 +65,7 @@ class CategoryController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/categories/{id}",
+     *     path="/categories/{id}",
      *     summary="Get a specific category by ID",
      *     tags={"Category"},
      *     operationId="getCategoryById",
@@ -92,7 +92,7 @@ class CategoryController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/api/categories/{id}",
+     *     path="/categories/{id}",
      *     summary="Update a category",
      *     tags={"Category"},
      *     operationId="updateCategory",
@@ -128,7 +128,7 @@ class CategoryController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="/api/categories/{id}",
+     *     path="/categories/{id}",
      *     summary="Delete a category",
      *     tags={"Category"},
      *     operationId="deleteCategory",

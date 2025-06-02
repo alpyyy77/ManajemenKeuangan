@@ -15,7 +15,7 @@ class PiutangController extends Controller
 {
     /**
      * @OA\Get(
-     *     path="/api/piutang",
+     *     path="/piutang",
      *     tags={"Piutang"},
      *     summary="Ambil semua data piutang",
      *     @OA\Response(response=200, description="Sukses")
@@ -28,12 +28,12 @@ class PiutangController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/piutang",
+     *     path="/piutang",
      *     tags={"Piutang"},
      *     summary="Buat data piutang",
      *     @OA\RequestBody(
      *         required=true,
-     *         @OA\JsonContent(ref="#/components/schemas/PiutangInput")
+     *         @OA\JsonContent(ref="#/components/schemas/Piutang")
      *     ),
      *     @OA\Response(response=201, description="Berhasil dibuat")
      * )
@@ -54,7 +54,7 @@ class PiutangController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/piutang/{id}",
+     *     path="/piutang/{id}",
      *     tags={"Piutang"},
      *     summary="Ambil piutang berdasarkan ID",
      *     @OA\Parameter(name="id", in="path", required=true, @OA\Schema(type="integer")),
@@ -69,11 +69,11 @@ class PiutangController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/api/piutang/{id}",
+     *     path="/piutang/{id}",
      *     tags={"Piutang"},
      *     summary="Update data piutang",
      *     @OA\Parameter(name="id", in="path", required=true, @OA\Schema(type="integer")),
-     *     @OA\RequestBody(required=true, @OA\JsonContent(ref="#/components/schemas/PiutangInput")),
+     *     @OA\RequestBody(required=true, @OA\JsonContent(ref="#/components/schemas/Piutang")),
      *     @OA\Response(response=200, description="Berhasil diupdate"),
      *     @OA\Response(response=404, description="Tidak ditemukan")
      * )
@@ -87,7 +87,7 @@ class PiutangController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="/api/piutang/{id}",
+     *     path="/piutang/{id}",
      *     tags={"Piutang"},
      *     summary="Hapus data piutang",
      *     @OA\Parameter(name="id", in="path", required=true, @OA\Schema(type="integer")),

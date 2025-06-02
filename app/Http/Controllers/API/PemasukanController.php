@@ -15,7 +15,7 @@ class PemasukanController extends Controller
 {
     /**
      * @OA\Get(
-     *     path="/api/pemasukan",
+     *     path="/pemasukan",
      *     tags={"Pemasukan"},
      *     summary="Get list of pemasukan",
      *     @OA\Response(
@@ -31,7 +31,7 @@ class PemasukanController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/pemasukan",
+     *     path="/pemasukan",
      *     tags={"Pemasukan"},
      *     summary="Create a new pemasukan",
      *     @OA\RequestBody(
@@ -66,7 +66,7 @@ class PemasukanController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/pemasukan/{id}",
+     *     path="/pemasukan/{id}",
      *     tags={"Pemasukan"},
      *     summary="Get a single pemasukan",
      *     @OA\Parameter(
@@ -88,7 +88,7 @@ class PemasukanController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/api/pemasukan/{id}",
+     *     path="/pemasukan/{id}",
      *     tags={"Pemasukan"},
      *     summary="Update pemasukan",
      *     @OA\Parameter(
@@ -125,7 +125,7 @@ class PemasukanController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="/api/pemasukan/{id}",
+     *     path="/pemasukan/{id}",
      *     tags={"Pemasukan"},
      *     summary="Delete pemasukan",
      *     @OA\Parameter(

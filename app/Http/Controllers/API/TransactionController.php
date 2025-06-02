@@ -16,7 +16,7 @@ class TransactionController extends Controller
 {
     /**
      * @OA\Get(
-     *     path="/api/transactions",
+     *     path="/transactions",
      *     tags={"Transactions"},
      *     summary="Get list of transactions",
      *     @OA\Response(
@@ -32,7 +32,7 @@ class TransactionController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/transactions",
+     *     path="/transactions",
      *     tags={"Transactions"},
      *     summary="Create a new transaction",
      *     @OA\RequestBody(
@@ -68,7 +68,7 @@ class TransactionController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/transactions/{id}",
+     *     path="/transactions/{id}",
      *     tags={"Transactions"},
      *     summary="Get a single transaction",
      *     @OA\Parameter(
@@ -90,7 +90,7 @@ class TransactionController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/api/transactions/{id}",
+     *     path="/transactions/{id}",
      *     tags={"Transactions"},
      *     summary="Update a transaction",
      *     @OA\Parameter(
@@ -128,7 +128,7 @@ class TransactionController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="/api/transactions/{id}",
+     *     path="/transactions/{id}",
      *     tags={"Transactions"},
      *     summary="Delete a transaction",
      *     @OA\Parameter(
